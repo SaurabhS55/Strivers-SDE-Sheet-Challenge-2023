@@ -5,14 +5,16 @@
 using namespace std;
 //tabulation- bottom up dp tc- ,sc- 
 int subSum(vector<int> arr,int n,int s){
-    vector<vector<int>> dp(n+1,vector<int>(s+1));
+    vector<vector<int>> dp(n+1,vector<int>(s+1,0));
     //base case
-    for(int i=0;i<n+1;i++){
-        for(int j=0;j<s+1;j++){
-            if(i==0)dp[i][j]=0;
-            if(j==0)dp[i][j]=1;
-        }
-    }
+    // for(int i=0;i<n+1;i++){
+    //     for(int j=0;j<s+1;j++){    I have commented this Base case because
+    //         if(i==0)dp[i][j]=0;    it fails when 0's are present in array so we can't
+    //         if(j==0)dp[i][j]=1;    assign dp[i][j]=1 when s=0;
+    //     }
+    // }
+    //instead we only can define a sure BC:
+    dp[0][0]=1;
     //choice diagram logic implementation
     for(int i=1;i<n+1;i++){
         for(int j=1;j<s+1;j++){

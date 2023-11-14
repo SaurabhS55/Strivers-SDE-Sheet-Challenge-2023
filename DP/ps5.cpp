@@ -12,9 +12,9 @@ bool subSum(vector<int> arr,int n,int s){
     //base case
     for(int i=0;i<n+1;i++){
         for(int j=0;j<s+1;j++){
-            if(i==0)dp[i][j]=false;
-            if(j==0)dp[i][j]=true;
-        }
+            if(i==0)dp[i][j]=false;   
+            if(j==0)dp[i][j]=true;      
+        }                             
     }
     //choice diagram logic implementation
     for(int i=1;i<n+1;i++){
