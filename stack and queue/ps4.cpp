@@ -1,10 +1,12 @@
+//  NSL
+
 #include<bits/stdc++.h>
 using namespace std;
-vector<int> NGL(vector<int>& nums,int n){
+vector<int> NSL(vector<int>& nums,int n){
     stack<int> st;
     vector<int> v;
     for(int i=0;i<n;i++){
-        while(!st.empty()&&st.top()<nums[i]){
+        while(!st.empty()&&st.top()>=nums[i]){
             st.pop();
         }
         if(st.empty()){
@@ -24,7 +26,7 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>nums[i];
     }
-    vector<int> ans=NGL(nums,n);
+    vector<int> ans=NSL(nums,n);
     for(int i:ans){
         cout<<i<<" ";
     }
